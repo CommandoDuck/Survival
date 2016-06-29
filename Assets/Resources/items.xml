@@ -1,0 +1,11 @@
+
+<ItemCollection>
+  <Items>
+    <Item name="Thing">
+      <Description>I'm a thing</Description>
+    </Item>
+    <Item name="Rock">
+      <Description>I'm a rock</Description>
+    </Item>
+  </Items>
+</ItemCollection>
