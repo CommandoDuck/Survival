@@ -1,42 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-    
-    private RectTransform inventoryRect;
-    private float inventoryWidth, inventoryHeight;
-    private List<GameObject> allSlots;
 
-    public int slots;
-    public int rows;
-    public float slotPadingLeft, slotPaddingTop;
-    public float slotSize;
-    public GameObject slotPrefab;
+    public int columns, slotAmt;
+    public GameObject invSlot;
+    public GameObject row;
+    
 
 	// Use this for initialization
 	void Start () {
-        CreateLayout();
-    }
+        MakeRows();
+	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
 
-    private void CreateLayout()
+    void MakeRows()
     {
-        allSlots = new List<GameObject>();
-
-        inventoryWidth = (slots / rows) + (slotSize + slotPadingLeft) + slotPadingLeft;
-        inventoryHeight = rows * (slotSize + slotPaddingTop) + slotPaddingTop;
-
-        inventoryRect = GetComponent<RectTransform>();
-
-        inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, inventoryWidth);
-        inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, inventoryHeight);
-
-
+        int rows = slotAmt / columns;
+        int slotsPlaced = 0;
+        for (int i = 0; i <= rows; i++)
+        {
+            GameObject newRow = (GameObject)Instantiate(row) as GameObject;
+            newRow.transform.SetParent(transform);
+            for(int y = 0; y <= columns; y++)
+            {
+                GameObject newSlot = (GameObject)Instantiate(invSlot) as GameObject;
+                newSlot.transform.SetParent(newRow.transform);
+                slotsPlaced++;
+                if (slotsPlaced == slotAmt)
+                    return;
+            }
+        }
     }
 }

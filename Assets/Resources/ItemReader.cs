@@ -4,20 +4,12 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
-public class ItemReader : MonoBehaviour {
+public static class ItemReader {
 
 	// Use this for initialization
-	void Start () {
+	public static ItemDataContainer GetData () {
 	    var itemContainer = ItemDataContainer.Load(Path.Combine(Application.dataPath, "Resources/items.xml"));
-        Debug.Log(itemContainer.Items);
-        foreach(Item item in itemContainer.Items)
-        {
-            Debug.Log(item.name);
-        }
+        
+        return itemContainer;
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

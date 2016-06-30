@@ -9,7 +9,7 @@ public class ItemContainer {
 
     [XmlArray("Items")]
     [XmlArrayItem("Item")]
-    public List<Item> items = new List<Item>();
+    public List<ItemValues> items = new List<ItemValues>();
 
     public static ItemContainer Load(string path)
     {

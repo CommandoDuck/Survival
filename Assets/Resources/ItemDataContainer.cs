@@ -8,7 +8,8 @@ using System.IO;
 public class ItemDataContainer {
 
     [XmlArray("Items"), XmlArrayItem("Item")]
-    public Item[] Items;
+    public List<ItemData> ItemData = new List<ItemData>();
+    //public ItemValues[] Items;
 
     public void Save(string path)
     {

@@ -3,7 +3,8 @@ using System.Collections;
 using System.Xml;
 using System.Xml.Serialization;
 
-public class Item {
+public class ItemValues
+ {
 
     [XmlAttribute("name")]
     public string name;
