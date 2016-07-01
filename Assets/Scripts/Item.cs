@@ -1,18 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class Item : MonoBehaviour {
+public enum ItemType {Consumable, Equipment, Weapon};
+
+public abstract class Item {
 
     public int id;
 
-	// Use this for initialization
-	void Start () {
-        //Debug.Log(ItemDataContainer.Load)
-        //Debug.Log(ItemReader.GetData().Items[id].name);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public ItemType type { get; set; }
+    public string sprite { get; set; }
+    public string itemName { get; set; }
+    public string description { get; set; }
+    public int maxSize{ get; set; }
+
+    public Item()
+    {
+
+    }
+
+    public Item(string itemName, string description, int maxsize, ItemType type, string sprite)
+    {
+        this.itemName = itemName;
+        this.description = description;
+        this.maxSize = maxSize;
+        this.type = type;
+        this.sprite = sprite;
+    }
+
+    public abstract void Use();
+
+    public virtual string GetTooltip()
+    {
+        return null;
+    }
+
+
+    
 }

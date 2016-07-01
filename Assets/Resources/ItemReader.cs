@@ -10,6 +10,8 @@ public static class ItemReader {
 	public static ItemDataContainer GetData () {
 	    var itemContainer = ItemDataContainer.Load(Path.Combine(Application.dataPath, "Resources/items.xml"));
         
+   
         return itemContainer;
     }
+
 }

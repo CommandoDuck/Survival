@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Consumables>
+    <Item xsi:type="Consumable">
+      <id>0</id>
+      <type>Consumable</type>
+      <sprite>path</sprite>
+      <itemName>Test</itemName>
+      <description>Im a test</description>
+      <maxSize>0</maxSize>
+      <health>20</health>
+      <mana>5</mana>
+    </Item>
+  </Consumables>
+</ItemContainer>
